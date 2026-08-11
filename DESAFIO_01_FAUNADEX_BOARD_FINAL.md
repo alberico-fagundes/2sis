@@ -3,11 +3,16 @@
 
 > **🎯 OBJETIVO EXTRAORDINÁRIO:** Seu cérebro não aprende copiando um código gigante de uma vez. Ele aprende quebrando problemas grandes em pedacinhos minúsculos (Baby Steps). Vamos construir a Arena de Duelo do **Faunadex** (estilo Triple Triad do Final Fantasy 8) tijolo por tijolo. E a regra de ouro: A cada tijolo assentado, nós salvamos o jogo (Git Commit) usando a própria interface visual do VSCode, sem dor de cabeça no terminal!
 
+> 🎓 **PROJETO INTEGRADOR (PBL):** O Faunadex não é apenas programação, é o elo prático entre 3 disciplinas do 2º SIS:
+> - 🖥️ **ITE:** Base estrutural (HTML/CSS), layout em Grid e pensamento computacional via JavaScript.
+> - 🧩 **Análise e Método de Sistemas:** Metodologia Ágil (Sprints/Baby Steps), e entregas contínuas (Git).
+> - 🗄️ **Introdução a Banco de Dados:** Modelagem de entidades e atributos das cartas preparando terreno para os dados persistentes.
+
 ---
 
 ## 🧰 PASSO -1: A PREPARAÇÃO DO TERRENO (VSCODE, PASTA E GIT)
 
-Para os alunos que estão começando do absoluto zero, não existe mágica. Você precisa de uma pasta e do motor do Git rodando no seu computador.
+começando do absoluto zero, não existe mágica. Você precisa de uma pasta e do motor do Git rodando no seu computador.
 
 **1. A Pasta do Projeto:**
 Crie uma pasta vazia na sua Área de Trabalho chamada `Faunadex`.
@@ -57,6 +62,7 @@ Crie um arquivo chamado `index.html` na sua pasta e vamos começar.
 A primeira coisa é montar a estrutura HTML sem beleza nenhuma, apenas caixas vazias.
 
 **1.** Copie o código abaixo no seu `index.html`:
+
 
 ```html
 <!DOCTYPE html>
@@ -132,6 +138,9 @@ Vá na tag `<style>` do seu arquivo e **adicione/modifique** o CSS da classe `.a
 ```
 
 Atualize o navegador (`F5`). **BUM!** Magicamente as três áreas estão uma do lado da outra perfeitamente alinhadas.
+
+**🧠 MICRO-DESAFIO ANTI-ÓCIO (Faça agora):**
+Vá no seu CSS e mude o valor `450px` acima para `100px`. Atualize a página e veja o que acontece com a mesa do meio. Percebeu como o CSS Grid controla o tamanho do espaço na tela? Agora devolva para `450px` antes de continuar!
 
 💾 **O SAVE GAME OBRIGATÓRIO:**
 1. Vá no **Source Control** do VSCode.
@@ -254,6 +263,9 @@ O último desafio é o mais importante. O meio da mesa precisa ser uma matriz pe
 
 Atualize o navegador. **A TRÍADE ESTÁ COMPLETA!**
 
+**🧠 MICRO-DESAFIO ANTI-ÓCIO (Faça agora):**
+No CSS `.tabuleiro` acima, mude o `repeat(3, 1fr)` das colunas para `repeat(4, 1fr)`. Atualize a tela. O que aconteceu? A mesa deformou totalmente! Isso prova que você tem controle matemático absoluto sobre a matriz do tabuleiro. Devolva para `repeat(3, 1fr)` para não bugar o seu jogo antes do próximo passo!
+
 💾 **O SALVAMENTO FINAL E ENVIO PARA A NUVEM:**
 1. Vá no **Source Control** do VSCode.
 2. Digite a mensagem: `Passo 4: Matriz 3x3 gerada no centro da mesa`.
@@ -271,8 +283,3 @@ Atualize o navegador. **A TRÍADE ESTÁ COMPLETA!**
 **O que acontece:** Você criou as 9 divs da mesa, mas em vez de virar um quadrado, elas esmagaram umas as outras em uma única linha.
 **A Causa:** Você esqueceu de usar o `display: grid` na classe PAI (`.tabuleiro`). O HTML não adivinha que 9 divs devem virar uma matriz se você não ligar a regra do Grid.
 **A Solução:** Vá no CSS e garanta que `.tabuleiro` tem o `display: grid` e o `grid-template-columns: repeat(3, 1fr)`.
-
-### 🐛 ERRO 2: O Bloqueio Corporativo (Sem senha de Administrador/Sudo)
-**O que acontece:** No PASSO -1, quando você tenta instalar o Git pelo site oficial, o sistema (Windows ou Linux) pede uma senha de Administrador (`sudo`) que você não tem, pois está num PC de empresa, faculdade ou bloqueado.
-**A Causa:** O instalador padrão tenta colocar o Git no núcleo do sistema operacional, e o computador não confia em você.
-**A Solução Hacker:** É aqui que o **Conda** entra para salvar a sua vida! Se a sua máquina de escola/trabalho já tiver o Conda instalado (geralmente usado para aulas de IA/Python), abra o terminal e digite `conda install git`. O Conda burla essa restrição porque ele instala o Git de forma invisível dentro da sua própria pasta de usuário, onde você manda e desmanda, sem pedir senha nenhuma!
